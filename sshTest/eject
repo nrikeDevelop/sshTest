@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for i in $(seq 221 300);do
+	ssh-keyscan  10.3.4.$i >> ~/.ssh/known_hosts
+done
+
+for i in $(seq 221 300);do
+	echo " Disquetera > " $i
+	sshpass -p <tu-contraseña>  ssh <tu-ip>@10.3.4.$i eject
+	delay 10
+done
